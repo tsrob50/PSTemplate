@@ -26,16 +26,14 @@ Param (
   #Script parameters go here
 )
 
-#---------------------------------------------------------[Initialisations]--------------------------------------------------------
-
-#Set Error Action to Silently Continue
-$ErrorActionPreference = 'SilentlyContinue'
 
 #----------------------------------------------------------[Declarations]----------------------------------------------------------
 
 #Script Version
 $sScriptVersion = '1.0'
 
+#Set Error Action to Silently Continue
+$ErrorActionPreference = 'SilentlyContinue'
 
 
 #Log File Info
@@ -61,35 +59,8 @@ function write-log {
     Write-output "$(get-date -format 'MM/dd/yy HH:mm:ss') $message" | Out-File $logFile -Append
 }
 
-<#
-Function <FunctionName> {
-  Param ()
-  Begin {
-    Write-LogInfo -LogPath $sLogFile -Message '<description of what is going on>...'
-  }
-  Process {
-    Try {
-      <code goes here>
-    }
-    Catch {
-      Write-LogError -LogPath $sLogFile -Message $_.Exception -ExitGracefully
-      Break
-    }
-  }
-  End {
-    If ($?) {
-      Write-LogInfo -LogPath $sLogFile -Message 'Completed Successfully.'
-      Write-LogInfo -LogPath $sLogFile -Message ' '
-    }
-  }
-}
-#>
-
 #-----------------------------------------------------------[Execution]------------------------------------------------------------
 
-# Start-Log -LogPath $sLogPath -LogName $sLogName -ScriptVersion $sScriptVersion
-#Script Execution goes here
-#Stop-Log -LogPath $sLogFile
 
 # Gather User Information
 Try {
