@@ -7,7 +7,7 @@
   <Brief description of parameter input required. Repeat this attribute if required>
 .INPUTS
   <Inputs if any, otherwise state None>
-.OUTPUTS Log File
+.OUTPUTS
   The script log file stored in \log in the current directory
 .NOTES
   Version:        1.0
@@ -40,7 +40,7 @@ $sScriptVersion = '1.0'
 
 #Log File Info
 $dir = (get-location).ToString() + '\'
-$logFile = $dir + 'Log\' + (get-date -format 'yyymmdd') +'_OutputLog.txt'
+$logFile = $dir + 'Log\' + (get-date -format 'yyyymmdd') +'_OutputLog.txt'
 Try {
     if ((Get-ChildItem -Attributes 'directory').name -notcontains 'Log') {
         New-Item -Type Directory .\Log
