@@ -32,8 +32,8 @@ Param (
 #Script Version
 $sScriptVersion = '1.0'
 
-#Set Error Action to Silently Continue
-$ErrorActionPreference = 'SilentlyContinue'
+#Set Error Action to stop
+$ErrorActionPreference = 'Stop'
 
 
 #Log File Info
@@ -65,6 +65,16 @@ function write-log {
 # Gather User Information
 Try {
     write-log ('Script ran by ' + ($env:UserDomain + '\' + $env:username) + ' from ' + $env:COMPUTERNAME)
+}
+Catch {
+    $ErrorMessage = $_.Exception.message
+    write-log ("Error Message: " + $ErrorMessage)
+    Break
+}
+
+
+# Start code here
+Try {
 }
 Catch {
     $ErrorMessage = $_.Exception.message
