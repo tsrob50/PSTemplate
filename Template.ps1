@@ -68,7 +68,7 @@ Try {
 }
 Catch {
     $ErrorMessage = $_.Exception.message
-    write-log ("Error Message: " + $ErrorMessage)
+    write-log 'Error gathering user information ' + $ErrorMessage)
     Break
 }
 
@@ -78,6 +78,6 @@ Try {
 }
 Catch {
     $ErrorMessage = $_.Exception.message
-    write-log ("Error Message: " + $ErrorMessage)
+    write-log ('Error Message: ' + $ErrorMessage)
     Break
 }
