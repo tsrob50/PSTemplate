@@ -67,6 +67,7 @@ Try {
     write-log ('Script ran by ' + ($env:UserDomain + '\' + $env:username) + ' from ' + $env:COMPUTERNAME)
 }
 Catch {
-    write-log "Error gathering user information" -ForegroundColor Red
+    $ErrorMessage = $_.Exception.message
+    write-log ("Error Message: " + $ErrorMessage)
     Break
 }
