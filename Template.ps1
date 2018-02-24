@@ -38,7 +38,7 @@ $ErrorActionPreference = 'Stop'
 
 #Log File Info
 $dir = (get-location).ToString() + '\'
-$logFile = $dir + 'Log\' + (get-date -format 'yyyymmdd') +'_OutputLog.txt'
+$logFile = $dir + 'Log\' + (get-date -format 'yyyyMMdd') +'_OutputLog.txt'
 Try {
     if ((Get-ChildItem -Attributes 'directory').name -notcontains 'Log') {
         New-Item -Type Directory .\Log
