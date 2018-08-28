@@ -22,8 +22,13 @@
 
 #---------------------------------------------------------[Script Parameters]------------------------------------------------------
 
-Param (
-  #Script parameters go here
+[cmdletbinding()]
+param(
+    [Parameter(Mandatory = $true, Position = 0)]
+    [string[]]$var,
+
+    [Parameter(Mandatory = $true, Position = 1)]
+    [string]$varTwo,
 )
 
 
